@@ -1,8 +1,43 @@
-@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;500;600;700&display=swap');
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-Regular.otf')
+    format('opentype');
+  font-weight: 400;
+  font-style: normal;
+}
 
-$primary: #202b3b;
-$secondary: #f6f6f8;
-$accent: #8E959E;
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-Bold.otf') format('opentype');
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-Medium.otf')
+    format('opentype');
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-Thin.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-Light.otf') format('opentype');
+}
+
+@font-face {
+  font-family: 'e-Ukraine';
+  src: url('/src/assets/fonts/e-Ukraine/e-Ukraine-UltraLight.otf')
+    format('opentype');
+}
+
+$primary: rgba(255, 255, 255, 0.57);
+$secondary: #000;
+$accent: #000;
 $muted: #2c3c4d;
 $dark: #0b131e;
-$fontFamily: 'Raleway', sans-serif;
+$fontFamily: 'e-Ukraine', sans-serif;
