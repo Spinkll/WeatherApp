@@ -13,6 +13,7 @@
 .data-wrap-forecast {
   border-radius: 10px;
   background-color: $primary;
+  backdrop-filter: blur(24px);
 }
 
 .icon {

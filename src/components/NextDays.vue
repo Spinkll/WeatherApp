@@ -5,7 +5,7 @@
     class="q-mt-lg row justify-between"
   >
     <div class="col-sm-12 data-wrap-forecast">
-      <p class="q-mt-lg text-body1 text-center text-secondary">
+      <p class="q-mt-lg text-body2 text-center text-secondary">
         {{ haveData ? getFormattedDate(index) : 'Loading...' }}
       </p>
       <div class="row q-my-lg justify-around">
@@ -125,5 +125,16 @@ const getFormattedDate = (index) => {
 .small-icon {
   font-size: 2rem;
   color: $secondary;
+}
+
+.text-body2{
+  font-weight: 400;
+  font-size: 18px;
+}
+
+.text-body1{
+  font-weight: 200;
+  font-size: 16px / 1.5;
+  letter-spacing: 0.03em;
 }
 </style>

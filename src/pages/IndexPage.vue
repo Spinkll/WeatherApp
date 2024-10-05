@@ -18,7 +18,7 @@
                 bg-color="primary"
                 clearable
                 color="accent"
-                :input-style="{ color: '#f6f6f8' }"
+                :input-style="{ color: '#000'}"
                 v-model="cityName"
                 placeholder="Search for cities"
                 @keyup.enter="searchWeather"
@@ -46,11 +46,6 @@
           <NextDays />
         </div>
       </div>
-      <div class="q-mt-lg row justify-center">
-        <div class="col-8">
-          <FooterBar />
-        </div>
-      </div>
     </div>
     <div v-else>Loading...</div>
   </q-page>
@@ -61,7 +56,6 @@ import { ref, onMounted } from 'vue';
 import { useWeatherStore } from './../stores/WeatherStore.ts';
 import TodayData from 'components/TodayData.vue';
 import NextDays from 'components/NextDays.vue';
-import FooterBar from 'components/FooterBar.vue';
 
 const { fetchWeather, fetchDataByLocation, haveData } = useWeatherStore();
 
@@ -72,13 +66,15 @@ const searchWeather = () => {
 };
 
 onMounted(() => {
-  fetchWeather('Nicosia');
+  fetchWeather('Kyiv');
 });
 </script>
 
 <style lang="scss" scoped>
 .page-wrap {
-  background-color: $dark;
+  background-image: url('assets/background.png');
+  background-repeat: no-repeat;
+  background-size: cover;
   .location-button {
     font-size: 1.4rem;
   }
