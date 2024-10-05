@@ -12,7 +12,7 @@
         <div class="col-sm-12 col-md-5">
           <div class="row justify-between items-center">
             <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-temperature-high small-icon"></i>
+             <img src="../assets/Temperature.svg" alt="Icon" class="icon" />
             </div>
             <div class="col-12 col-md-6">
               <div class="text-accent text-center">
@@ -51,8 +51,8 @@
         <div class="col-sm-12 col-md-5">
           <div class="row justify-between items-center">
             <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-wind small-icon"></i>
-            </div>
+           <img src="../assets/Wind_Speed.svg" alt="Icon" class="icon" />
+              </div>
             <div class="col-12 col-md-6">
               <div class="text-accent text-center">
                 <p class="text-body2">Wind Speed</p>
@@ -68,7 +68,7 @@
         <div class="col-sm-12 col-md-5">
           <div class="row justify-between items-center">
             <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-water small-icon"></i>
+           <img src="../assets/Humidity.svg" alt="Icon" class="icon" />
             </div>
             <div class="col-12 col-md-6">
               <div class="text-accent text-center">
@@ -85,118 +85,7 @@
       </div>
     </div>
   </div>
-  <!-- <div class="q-mt-lg row justify-between">
-    <div class="col-sm-12 data-wrap-forecast">
-      <p class="q-mt-lg text-body1 text-center text-secondary">
-        {{ haveData ? formattedForecastDate2 : 'Loading...' }}
-      </p>
-      <div class="row q-my-lg justify-around">
-        <div class="col-sm-12 col-md-5">
-          <div class="row justify-between items-center">
-            <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-temperature-high small-icon"></i>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="text-accent text-center">
-                <p class="text-body2">Temperature</p>
-              </div>
-              <div class="text-secondary text-center">
-                <p class="text-body1">
-                  {{
-                    haveData
-                      ? weatherData?.forecast?.forecastday[2]?.day?.avgtemp_c +
-                          ' °C' || 'N/A'
-                      : 'Loading...'
-                  }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-5">
-          <div class="row justify-between items-center">
-            <div class="col-12 col-md-6 text-center">
-              <img
-                :src="
-                  haveData
-                    ? weatherData?.forecast?.forecastday[2]?.day?.condition
-                        ?.icon || 'N/A'
-                    : 'Loading...'
-                "
-                :alt="
-                  haveData
-                    ? weatherData?.forecast?.forecastday[2]?.day?.condition
-                        ?.text || 'N/A'
-                    : 'Loading...'
-                "
-              />
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="text-accent text-center">
-                <p class="text-body2">General Condition</p>
-              </div>
-              <div class="text-secondary text-center">
-                <p class="text-body1">
-                  {{
-                    haveData
-                      ? weatherData?.forecast?.forecastday[2]?.day?.condition
-                          ?.text || 'N/A'
-                      : 'Loading...'
-                  }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="row q-my-lg justify-around">
-        <div class="col-sm-12 col-md-5">
-          <div class="row justify-between items-center">
-            <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-wind small-icon"></i>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="text-accent text-center">
-                <p class="text-body2">Wind Speed</p>
-              </div>
-              <div class="text-secondary text-center">
-                <p class="text-body1">
-                  {{
-                    haveData
-                      ? weatherData?.forecast?.forecastday[2]?.day
-                          ?.maxwind_kph + ' km/h' || 'N/A'
-                      : 'Loading...'
-                  }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="col-sm-12 col-md-5">
-          <div class="row justify-between items-center">
-            <div class="col-12 col-md-6 text-center">
-              <i class="fa-solid fa-water small-icon"></i>
-            </div>
-            <div class="col-12 col-md-6">
-              <div class="text-accent text-center">
-                <p class="text-body2">Humidity</p>
-              </div>
-              <div class="text-secondary text-center">
-                <p class="text-body1">
-                  {{
-                    haveData
-                      ? weatherData?.forecast?.forecastday[2]?.day
-                          ?.avghumidity + ' %' || 'N/A'
-                      : 'Loading...'
-                  }}
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div> -->
+
 </template>
 
 <script setup>
