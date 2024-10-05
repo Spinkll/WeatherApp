@@ -21,7 +21,7 @@
     <div class="col-sm-12 col-md-6 single-data-box q-my-xs q-pa-lg">
       <div class="row items-center">
         <div class="col-12 col-md-6 text-center">
-          <i class="fa-solid fa-temperature-high icon"></i>
+            <img src="../assets/Temperature.svg" alt="Icon" class="icon" />
         </div>
         <div class="col-12 col-md-6">
           <div class="text-accent text-center">
@@ -77,7 +77,7 @@
     <div class="col-sm-12 col-md-6 single-data-box q-my-xs q-pa-lg">
       <div class="row items-center">
         <div class="col-12 col-md-6 text-center">
-          <i class="fa-solid fa-wind icon"></i>
+           <img src="../assets/Wind_Speed.svg" alt="Icon" class="icon" />
         </div>
         <div class="col-12 col-md-6">
           <div class="text-accent text-center">
@@ -100,7 +100,7 @@
     <div class="col-sm-12 col-md-6 single-data-box q-my-xs q-pa-lg">
       <div class="row items-center">
         <div class="col-12 col-md-6 text-center">
-          <i class="fa-solid fa-water icon"></i>
+           <img src="../assets/Humidity.svg" alt="Icon" class="icon" />
         </div>
         <div class="col-12 col-md-6">
           <div class="text-accent text-center">
@@ -126,6 +126,8 @@ import { storeToRefs } from 'pinia';
 import { useWeatherStore } from '../stores/WeatherStore';
 import { computed } from 'vue';
 import { parse, format } from 'date-fns';
+
+
 
 const { weatherData, haveData } = storeToRefs(useWeatherStore());
 const weatherDataAny = weatherData;
