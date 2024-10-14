@@ -47,21 +47,25 @@ export const useWeatherStore = defineStore({
             } catch (error) {
               Dialog.create({
                 title: 'Error',
-                message: 'An error occurred while fetching weather data by location.'
+                message: 'An error occurred while fetching weather data by location.',
+                color: '#fff',
+
               });
             }
           },
           (error) => {
             Dialog.create({
               title: 'Error',
-              message: `Failed to get location: ${error.message}`
+              message: `Failed to get location: ${error.message}`,
+              color: '#fff',
             });
           }
         );
       } else {
         Dialog.create({
           title: 'Error',
-          message: 'Geolocation is not supported by this browser.'
+          message: 'Geolocation is not supported by this browser.',
+          color: '#fff',
         });
       }
     }
