@@ -42,6 +42,15 @@
     <div class="col-sm-12 col-md-6 single-data-box q-my-xs q-pa-lg">
       <div class="row items-center">
         <div class="col-12 col-md-6 text-center">
+          <!-- <img src="../assets/weather-icons-2-0/Cloudy/Cloudy_day.svg" alt="Sunny" class="icon"> -->
+          <!-- <img
+            :src="
+              haveData? (isDay ? currentWeatherIcon.day : currentWeatherIcon.night)
+              : 'Loading...'
+            "
+            :alt="haveData ? weatherCondition || 'N/A' : 'Loading...'"
+          /> -->
+
           <img
             :src="
               haveData
@@ -126,8 +135,7 @@ import { storeToRefs } from 'pinia';
 import { useWeatherStore } from '../stores/WeatherStore';
 import { computed } from 'vue';
 import { parse, format } from 'date-fns';
-
-
+// import weatherRemap from 'assets/weatherRemap.json'; // Підключення вашого remap-JSON
 
 const { weatherData, haveData } = storeToRefs(useWeatherStore());
 const weatherDataAny = weatherData;
@@ -147,7 +155,41 @@ const formattedDate = computed(() => {
   }
   return 'N/A';
 });
+
+// const isDay = computed(() => {
+//   if (
+//     haveData.value &&
+//     weatherDataAny.value.current &&
+//     weatherDataAny.value.current.is_day !== undefined
+//   ) {
+//     return weatherDataAny.value.current.is_day === 1; // Якщо `is_day === 1`, це день
+//   }
+//   return true; // За замовчуванням вважаємо день
+// });
+
+// const currentWeatherIcon = computed(() => {
+//   if (
+//     haveData.value &&
+//     weatherDataAny.value.current &&
+//     weatherDataAny.value.current.condition &&
+//     weatherDataAny.value.current.condition.text
+//   ) {
+//     const weatherCondition = weatherDataAny.value.current.condition.text;
+
+//     if (weatherRemap[weatherCondition]) {
+//       return {
+//         day: `/path/to/icons/${weatherRemap[weatherCondition].day}.png`,
+//         night: `/path/to/icons/${weatherRemap[weatherCondition].night}.png`,
+//       };
+//     }
+//   }
+//   return {
+//     day: 'Loading...',
+//     night: 'Loading...',
+//   };
+// });
 </script>
+
 
 <style lang="scss" scoped>
 
