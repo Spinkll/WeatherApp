@@ -43,15 +43,14 @@
       <div class="row items-center">
         <div class="col-12 col-md-6 text-center">
           <!-- <img src="../assets/weather-icons-2-0/Cloudy/Cloudy_day.svg" alt="Sunny" class="icon"> -->
-          <!-- <img
+          <img
             :src="
-              haveData? (isDay ? currentWeatherIcon.day : currentWeatherIcon.night)
-              : 'Loading...'
+              currentWeatherIcon
             "
             :alt="haveData ? weatherCondition || 'N/A' : 'Loading...'"
-          /> -->
+          />
 
-          <img
+          <!-- <img
             :src="
               haveData
                 ? weatherData?.current?.condition?.icon || 'N/A'
@@ -62,7 +61,7 @@
                 ? weatherData?.current?.condition?.text || 'N/A'
                 : 'Loading...'
             "
-          />
+          /> -->
         </div>
         <div class="col-12 col-md-6">
           <div class="text-accent text-center">
@@ -135,7 +134,7 @@ import { storeToRefs } from 'pinia';
 import { useWeatherStore } from '../stores/WeatherStore';
 import { computed } from 'vue';
 import { parse, format } from 'date-fns';
-// import weatherRemap from 'assets/weatherRemap.json'; // Підключення вашого remap-JSON
+  import weatherRemap from 'assets/weatherRemap.json';
 
 const { weatherData, haveData } = storeToRefs(useWeatherStore());
 const weatherDataAny = weatherData;
@@ -154,6 +153,22 @@ const formattedDate = computed(() => {
     return format(date, 'dd MMMM, EEEE HH:mm');
   }
   return 'N/A';
+});
+
+const getWeatherIconPath = (condition, isDay) => {
+  if (weatherRemap[condition]) {
+    return isDay ? weatherRemap[condition].day : weatherRemap[condition].night;
+  }
+}
+
+const currentWeatherIcon = computed(() => {
+  if (weatherData.value?.current) {
+    const condition = weatherData.value.current.condition?.text || '';
+    const isDay = weatherData.value.current.is_day === 1
+    return getWeatherIconPath(condition, isDay);
+  }
+
+  return '/weather-icons-2-0/Sunny/Sunny.svg';
 });
 
 // const isDay = computed(() => {

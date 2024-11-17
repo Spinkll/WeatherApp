@@ -30,7 +30,7 @@
           <div class="row justify-between items-center">
             <div class="col-12 col-md-6 text-center">
               <img
-                :src="day.day?.condition?.icon || 'N/A'"
+                :src="getWeatherIconPath(day.day?.condition?.text)"
                 :alt="day.day?.condition?.text || 'N/A'"
               />
             </div>
@@ -93,6 +93,7 @@ import { storeToRefs } from 'pinia';
 import { useWeatherStore } from '../stores/WeatherStore';
 import { parse, format } from 'date-fns';
 import { computed } from 'vue';
+import weatherRemap from 'assets/weatherRemap.json';
 
 const { weatherData, haveData } = storeToRefs(useWeatherStore());
 
@@ -103,6 +104,13 @@ const selectedForecastDays = computed(() => {
   }
   return [];
 });
+
+const getWeatherIconPath = (condition) => {
+  if (weatherRemap[condition]) {
+    const iconPath = weatherRemap[condition].day;
+    return iconPath;
+  }
+};
 
 const getFormattedDate = (index) => {
   if (
